@@ -143,7 +143,7 @@ header{
     z-index: 2;
 }
 .sticky + main{
-    padding-top: 0px;
+    padding-top: 0;
 }
 .front {
     position: absolute;
@@ -160,7 +160,7 @@ nav {
     font-size: 1.1em;
     font-weight: bold;
     background-color: var(--primary);
-    box-shadow: 0px 3px 5px rgba(0,0,0,.18), 0 5px 8px rgba(0,0,0,.23);
+    box-shadow: 0 3px 5px rgba(0,0,0,.18), 0 5px 8px rgba(0,0,0,.23);
     /*box-shadow: 0 3px 5px rgba(0,0,0,.18), 0 5px 8px rgba(0,0,0,.23);*/
 }
 .nav--container {
@@ -467,6 +467,7 @@ footer{
     margin: 0 auto;
     overflow: hidden;
     clear: both;
+    padding: 32px 0;
 }
 .footer-one--container,.footer-two--container {
     float: left;
@@ -501,11 +502,9 @@ footer{
 }
 
 
-footer-two--container {
-    background: #fff url(/img/mumbra-map.jpg) no-repeat ;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+.footer-two--container {
+    width: 50%;
+    height: 300px;
 }
 
 /*
@@ -535,7 +534,7 @@ footer-two--container {
         top: 100%;
         z-index: 3;
         float: none;
-        box-shadow: inset 5px 3px 5px rgba(0,0,0,.18), 5px 5px 8px rgba(0,0,0,.23);
+        /*box-shadow: inset 5px 3px 5px rgba(0,0,0,.18), 5px 5px 8px rgba(0,0,0,.23);*/
         box-shadow: 0 3px 5px rgba(0,0,0,.18), 0 5px 8px rgba(0,0,0,.23);
     }
     .nav--container > ul,.nav--container ul > li,.nav--container ul li > a{
@@ -576,7 +575,7 @@ footer-two--container {
 
 }
 
-@media (max-width: 425px){
+@media (max-width: 500px){
     .college-banner {
         background: #fff;
     }

@@ -14,7 +14,7 @@ navtoggle.addEventListener('change', (event) => {
         navtoggle_text.innerHTML = '|||';
         navtoggle_text.style.fontSize = '24px';
     }
-})
+});
 
 //nav stick to top on scroll fonction
 window.onscroll = function(){myFunction()};

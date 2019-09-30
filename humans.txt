@@ -5,11 +5,19 @@
 
     <name> -- <role> -- <twitter>
 
-# THANKS
+Web Developer: Ankush More
+Site: https://ankushitguy.com
+Twitter: @ankushitguy
+Github: https://github.com/ankushitguy
+Location: Thane,Maharashtra,India
 
-    <name>
+# THANKS
+    Name: Ankush More
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+Last update: 2019/10/10
+    Doctype:HTML5
+    Standards:CSS3, HTML5, JavaScript
+    Components: Apache Server Configs, jQuery, Modernizr, Normalize.css, etc.
+    Software: Sublime Text, Notepad++, FileZilla, Photoshop
