@@ -1,29 +1,29 @@
-:root{--blue: #376dcf;--indigo: #6610f2;--purple: #6f42c1;--pink: #e83e8c;--red: #ee5253;--orange: #fd7e14;--yellow: #fdba50;--green: #339266;--teal: #008080;--cyan: #17a2b8;--white: #fff;--gray: #6c757d;--gray-dark: rgba(3, 3, 4, 0.82);--primary: #339266;--secondary: #6c757d;--success: #339266;--info: #376dcf;--warning: #fdba50;--danger: #ee5253;--light: #f8f9fa;--dark: #050607;}
+:root{--blue: #376dcf;--indigo: #6610f2;--purple: #6f42c1;--pink: #e83e8c;--red: #ee5253;--orange: #fd7e14;--yellow: #fdba50;--green: #339266;--teal: #008080;--cyan: #17a2b8;--white: #fff;--gray: #6c757d;--gray-dark: #232323;--primary: #339266;--secondary: #6c757d;--success: #339266;--info: #376dcf;--warning: #fdba50;--danger: #ee5253;--light: #f8f9fa;--dark: #050607;}
 
 
-/*.colors{*/
-/*    color: var(--blue);*/
-/*    color: var(--indigo);*/
-/*    color: var(--purple);*/
-/*    color: var(--pink);*/
-/*    color: var(--red);*/
-/*    color: var(--orange);*/
-/*    color: var(--yellow);*/
-/*    color: var(--green);*/
-/*    color: var(--teal);*/
-/*    color: var(--cyan);*/
-/*    color: var(--white);*/
-/*    color: var(--gray);*/
-/*    color: var(--gray-dark);*/
-/*    color: var(--primary);*/
-/*    color: var(--secondary);*/
-/*    color: var(--success);*/
-/*    color: var(--info);*/
-/*    color: var(--warning);*/
-/*    color: var(--danger);*/
-/*    color: var(--light);*/
-/*    color: var(--dark);*/
-/*}*/
+/*.colors{
+    color: var(--blue);
+    color: var(--indigo);
+    color: var(--purple);
+    color: var(--pink);
+    color: var(--red);
+    color: var(--orange);
+    color: var(--yellow);
+    color: var(--green);
+    color: var(--teal);
+    color: var(--cyan);
+    color: var(--white);
+    color: var(--gray);
+    color: var(--gray-dark);
+    color: var(--primary);
+    color: var(--secondary);
+    color: var(--success);
+    color: var(--info);
+    color: var(--warning);
+    color: var(--danger);
+    color: var(--light);
+    color: var(--dark);
+}*/
 
 
 
@@ -137,13 +137,13 @@ header{
  */
 
 .sticky{
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
 }
 .sticky + main{
-    padding-top: 0;
+    padding-top: 74px;
 }
 .front {
     position: absolute;
@@ -290,7 +290,7 @@ main{
 .instant--notification-marquee marquee > a{
     color: var(--info);
 }
-.instant--notification-marquee marquee a i{
+.instant--notification-marquee marquee a > i{
     color: var(--red);
 }
 
@@ -431,8 +431,15 @@ main{
     text-align: center;
 }
 
-.profile-quotes {
+.profile-quotes--container .profile-quotes {
     margin: 100px auto;
+}
+
+.profile-quotes--container .profile-quotes:hover .profile-quotes-quotes-image--container > img,.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2:before,.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2:after {
+    opacity: 1;
+}
+.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2 {
+    color: var(--dark);
 }
 
 .profile-quotes--container .profile-quotes .profile-quotes-quotes-image--container > img {
@@ -441,6 +448,8 @@ main{
     opacity: .4;
     transition: all .3s ease-in-out;
     -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
 }
 
 
@@ -461,6 +470,7 @@ blockquote {
 .profile-quotes--container .profile-quotes .profile-quotes-title .profile-quotes-text blockquote > h2 {
     color: var(--gray);
     display: inline;
+    transition: all .3s ease-in-out;
 }
 .profile-quotes--container .profile-quotes .profile-quotes-title .profile-quotes-text blockquote > h2:before {
     content: '\201C';
@@ -622,7 +632,6 @@ footer{
     .box:nth-child(even) {
         background-color: var(--gray-dark);
     }
-
     .footer-one--container,.footer-two--container {
         width: 100%;
     }
@@ -631,9 +640,6 @@ footer{
 @media (min-width: 2000px){
     body{
         font-size: 24px;
-    }
-    .sticky + main{
-        padding-top: 104px;
     }
     nav,.nav--container,.nav--container ul li > a{
         height: 104px;

@@ -71,5 +71,4 @@ console.log(count);
 });
 
 
-let quote_image = document.querySelectorAll('.profile-quotes--container .profile-quotes .profile-quotes-quotes-image--container > img:hover');
-console.log(quote_image);
+
