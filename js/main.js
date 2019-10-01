@@ -71,23 +71,5 @@ console.log(count);
 });
 
 
-/*image_left[0].addEventListener('click', ()=>{
-    count--;
-    images[count+1].className.replace(' gallery-visible','gallery-invisible');
-    if (count === 0) {
-        image_left[0].className.replace(' visible','invisible');
-    } else {
-        image_right[0].className.replace(' invisible','visible');
-    }
-    console.log(count);
-});
-image_right[0].addEventListener('click',()=>{
-    count++;
-    images[count].className.replace(' gallery-invisible','gallery-visible');
-    if (count === length) {
-        image_right[0].className.replace(' visible','invisible');
-    } else {
-        image_left[0].className.replace(' invisible','visible');
-    }
-    console.log(count);
-});*/
+let quote_image = document.querySelectorAll('.profile-quotes--container .profile-quotes .profile-quotes-quotes-image--container > img:hover');
+console.log(quote_image);
