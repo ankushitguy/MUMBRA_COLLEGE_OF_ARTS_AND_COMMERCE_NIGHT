@@ -29,46 +29,56 @@ function myFunction(){
     }
 }
 
+/*let test = document.querySelectorAll(".name--container > label");
+console.log(test);*/
+
 
 /*
-* Gallery
-*/
+* Add to homescreen
+* */
 
-const images = document.getElementsByClassName('image--container');
-const image_left = document.getElementsByClassName('image-left');
-const image_right = document.getElementsByClassName('image-right');
+// Register service worker to control making site work offline
 
-let count = 0;
-const length = images.length-1;
-
-image_left[0].addEventListener('click', ()=>{
-    count--;
-    images[count+1].classList.add('gallery-invisible');
-    images[count+1].classList.remove('gallery-visible');
-    if (count === 0) {
-        image_left[0].classList.add('invisible');
-        image_left[0].classList.remove('visible');
-    } else {
-        image_right[0].classList.add('visible');
-        image_right[0].classList.remove('invisible');
-    }
-    console.log(count);
-});
-image_right[0].addEventListener('click',()=>{
-    count++;
-    images[count].classList.add('gallery-visible');
-    images[count].classList.remove('gallery-invisible');
-    if (count === length) {
-        image_right[0].classList.add('invisible');
-        image_right[0].classList.remove('visible');
-        images[count].classList.add('gallery-visible');
-        images[count].classList.remove('gallery-invisible');
-} else {
-    image_left[0].classList.add('visible');
-    image_left[0].classList.remove('invisible');
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.js')
+        .then(function() { console.log('Service Worker Registered'); });
 }
-console.log(count);
+
+
+let deferredPrompt;
+const addBtn = document.querySelector('.install-homescreen > .add-button');
+const addBtnBG = document.querySelector('.install-homescreen--container');
+addBtn.style.display = 'none';
+addBtnBG.style.display = 'none';
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Update UI to notify the user they can add to home screen
+    addBtn.style.display = 'block';
+    addBtnBG.style.display = 'block';
+
+    addBtn.addEventListener('click', (e) => {
+        // hide our user interface that shows our A2HS button
+        addBtn.style.display = 'none';
+        addBtnBG.style.display = 'none';
+        // Show the prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
+    });
 });
 
-
-
+window.addEventListener('appinstalled', (evt) => {
+    console.log('a2hs installed');
+});

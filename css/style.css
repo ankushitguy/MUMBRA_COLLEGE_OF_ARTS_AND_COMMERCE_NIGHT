@@ -51,6 +51,25 @@ body {
     line-height: 140%;
 }
 
+body::-webkit-scrollbar {
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 10px 0 10px rgba(0,0,0,0.3);*/
+    background-color: var(--primary);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--light);
+    -webkit-box-shadow: inset 5px 5px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    outline: 1px solid slategrey;
+}
+body::-webkit-scrollbar-thumb:active {
+    -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
+
+}
+
 /*
  * Header
  */
@@ -135,6 +154,28 @@ header{
 /*
  * Navigation
  */
+.install-homescreen--container {
+    background-color: var(--blue);
+    height: 64px;
+}
+.install-homescreen {
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+}
+.install-homescreen > .add-button {
+    float: right;
+    background-color: transparent;
+    color: var(--light);
+    cursor: pointer;
+    padding: 12px 20px;
+    margin: 11.5px 16px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 
 .sticky{
     position: fixed;
@@ -435,9 +476,7 @@ main{
     margin: 100px auto;
 }
 
-.profile-quotes--container .profile-quotes:hover .profile-quotes-quotes-image--container > img,.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2:before,.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2:after {
-    opacity: 1;
-}
+
 .profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2 {
     color: var(--dark);
 }
@@ -477,15 +516,15 @@ blockquote {
     color: var(--primary);
     font-size: 100px;
     opacity: .4;
-
-
 }
 .profile-quotes--container .profile-quotes .profile-quotes-title .profile-quotes-text blockquote > h2:after {
     content: ' \201E';
     color: var(--primary);
     font-size: 100px;
     opacity: .4;
-
+}
+.profile-quotes--container .profile-quotes:hover .profile-quotes-quotes-image--container > img,.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2:before,.profile-quotes--container .profile-quotes:hover .profile-quotes-title .profile-quotes-text blockquote > h2:after {
+    opacity: 1;
 }
 
 
@@ -542,6 +581,157 @@ footer{
     height: 300px;
 }
 
+
+
+/*
+* Contact us.html
+*/
+.form--container {
+    display: block;
+    padding: 64px 0;
+    max-width: 700px;
+    margin: 0 auto;
+    outline: none;
+    overflow: hidden;
+    clear: both;
+}
+.name--container,.email--container,.subject--container,.message--container {
+    margin: 16px 0;
+    position: relative;
+}
+.name--container > label,.email--container > label,.subject--container > label,.message--container > label{
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    margin-top: -10.5px;
+    font-size: 20px;
+    padding: auto 12px;
+
+}
+#name, #email, #subject, #message {
+    width: 100%;
+    font-size: 20px;
+
+    padding: 12px 20px 12px 46px;
+    resize: none;
+    overflow: auto;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid darkgrey;
+}
+#name:focus, #email:focus, #subject:focus, #message:focus {
+    border: 2px solid var(--primary);
+    padding: 11px 19px 11px 45px;
+}
+
+
+
+#submit {
+    font-size: 20px;
+    float: right;
+    padding: 12px 20px;
+    color: var(--light);
+    background-color: var(--primary);
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+}
+#submit:hover {
+    border: 1px solid var(--gray);
+    background-color: var(--white);
+    color: var(--dark);
+    padding: 11px 19px;
+}
+#submit:active {
+    background-color: var(--blue);
+}
+
+
+/*
+* Courses.html
+*/
+.courses-heading--container > h1 {
+    margin-bottom: 64px;
+    line-height: 1.1em;
+}
+.courses--container {
+    color: var(--dark);
+    margin: 64px 0;
+}
+.courses-timeline--container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.courses-timeline--container > ul {
+    list-style: none;
+}
+.courses-timeline--container .list-ul > li {
+    margin: 16px 0;
+    color: var(--gray-dark);
+    background-color: transparent;
+    margin-top: 64px;
+}
+.courses-timeline--container ul li {
+    margin: 16px 0 16px 64px;
+    color: var(--gray);
+}
+
+
+/*
+* Notification.html
+*/
+
+.notification--container {
+    max-width: 700px;
+    margin: 64px auto;
+    color: var(--gray-dark);
+
+}
+.notification-heading--container >h1 {
+    line-height: 1.1em;
+}
+.notification-content--container > a {
+    display: block;
+    color: var(--blue);
+    padding: 12px 20px;
+}
+.notification-content--container > a:hover {
+    background-color: rgba(51,146,102,.3);
+    border-radius: 5px;
+}
+.notification-content--container a > i {
+    color: var(--red);
+}
+.notification-content--container {
+    margin: 64px 0;
+    overflow-y: scroll;
+    height: 700px;
+}
+
+.notification-content--container .notification--date {
+    margin-top: 64px;
+}
+.notification-content--container::-webkit-scrollbar {
+    width: 16px;
+}
+.notification-content--container::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 10px 0 10px rgba(0,0,0,0.3);*/
+    background-color: var(--primary);
+    border-radius: 8px;
+}
+
+.notification-content--container::-webkit-scrollbar-thumb {
+    background-color: var(--light);
+    -webkit-box-shadow: inset 5px 5px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    outline: 1px solid slategrey;
+}
+.notification-content--container::-webkit-scrollbar-thumb:active {
+    -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
+
+}
+
+
 /*
  * Media Screen for Touch Devices
  */
@@ -558,6 +748,7 @@ footer{
     .instant-contact--container >  .goals--containerinstant-email-phone {
         float: none;
         display: block;
+        word-wrap: break-word;
     }
     nav{
         height: 74px;
@@ -634,6 +825,9 @@ footer{
     }
     .footer-one--container,.footer-two--container {
         width: 100%;
+        height: initial;
+        word-wrap: break-word;
+
     }
 }
 
@@ -651,3 +845,84 @@ footer{
         margin: 0 auto;
     }
 }
+
+@media (orientation: landscape) {
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+       * Don't show links that are fragment identifiers,
+       * or use the `javascript:` pseudo protocol
+       */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+       * Printing Tables:
+       * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+       */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+

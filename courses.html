@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Mumbra College of Arts & Commerce (Night)</title>
+    <title>Courses</title>
     <meta name="description" content="The Mumbra College of Arts & Commerce was founded in 2001 by visionaries and founder of F.M.S. Educational Trust, Mumbra.">
     <meta name="keywords" content="Mumbra college,Mumbra night,Mumbra night college,mumbra night school,college in mumbra,commerce college in mumbra,st john school mumbra,st john college mumbra,St Johns Convent School Mumbra">
     <meta name="author" content="Mumbra Night College">
@@ -16,8 +16,9 @@
     <link href="./index.html" rel="canonical">
     <!-- Place favicon.ico in the root directory -->
     <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="./icons-192.png">
 
+    <link rel="manifest" href="manifest.webmanifest">
 
     <!-- Place stylesheet here -->
     <link rel="stylesheet" href="css/style.css">
@@ -47,12 +48,23 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
+
+<div class="install-homescreen--container">
+    <div class="install-homescreen">
+
+        <button class="add-button">Add to home screen <i class="fas fa-download"></i></button>
+    </div>
+</div>
+
+
 <!-- HEADER START -->
-<header>
+
+<header role="banner" aria-roledescription="website heading and information">
+
     <div class="instant-contact">
         <div class="instant-contact--container">
             <div class="instant-social">
-                <a href=""><i class="fab fa-facebook-square fa-lg"></i></a><a href=""><i class="fab fa-instagram fa-lg"></i></a><a href=""><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.facebook.com" role="button" aria-roledescription="facebook"><i class="fab fa-facebook-square fa-lg"></i></a><a href="https://www.instagram.com" role="button" aria-roledescription="instagram"><i class="fab fa-instagram fa-lg"></i></a><a href="https://www.twitter.com" role="button" aria-roledescription="facebook"><i class="fab fa-twitter fa-lg"></i></a>
             </div>
             <div class="instant-email-phone">
                 <a href="tel:9082089496"><i class="fas fa-phone fa-ms"></i> 9082089496</a><a href="mailto:mumbranightcollege2001@gmail.com"><i class="fas fa-envelope fa-ms"></i> mumbranightcollege2001@gmail.com</a>
@@ -85,30 +97,66 @@
 <!-- HEADER ENDS -->
 <!---->
 <!-- NAV START -->
-<nav id="navbar">
+<nav id="navbar" role="navigation" aria-roledescription="navigation of site">
     <div class="nav--container">
         <div class="logo--container"><a href="./index.html"><img src="./icon-white.png" alt="logo"></a></div>
-        <label for="navtoggle" id="navtoggle_text">|||</label>
+
+        <label tabindex="-1" for="navtoggle" id="navtoggle_text">|||</label>
         <input type="checkbox" name="navtoggle" id="navtoggle">
-        <ul>
-            <li><a href="./index.html"> <i class="fas fa-home fa-lg" style="color: #fff"></i> HOME</a></li><!--
-            --><li><a href="./notification.html"> <i class="fas fa-bell fa-lg" style="color: #fff"></i> NOTIFICATION</a></li><!--
-            --><li><a href="./courses.html"> <i class="fas fa-book fa-lg" style="color: #fff"></i> COURSES</a></li><!--
-            --><li><a href="./contact-us.html"> <i class="fas fa-envelope fa-lg" style="color: #fff"></i> CONTACT US</a></li>
+
+        <ul role="menubar" aria-label="navigation menu">
+            <li role="none"><a href="./index.html" role="menuitem" tabindex="0"> <i class="fas fa-home fa-lg" style="color: #fff"></i> HOME</a></li><!--
+            --><li role="none"><a href="./notification.html" role="menuitem" tabindex="0"> <i class="fas fa-bell fa-lg" style="color: #fff"></i> NOTIFICATION</a></li><!--
+            --><li role="none"><a href="#" role="menuitem" tabindex="0"> <i class="fas fa-book fa-lg" style="color: #fff"></i> COURSES</a></li><!--
+            --><li role="none"><a href="./contact-us.html" role="menuitem" tabindex="0"> <i class="fas fa-envelope fa-lg" style="color: #fff"></i> CONTACT US</a></li>
         </ul>
+
     </div>
 </nav>
 <!--  NAV ENDS-->
 
 <!-- MAIN START -->
-<main>
+<main role="main" aria-roledescription="main content">
     <div class="main--container">
+
         <div class="courses--container">
             <div class="courses-heading--container">
-                <h1>Courses</h1>
+                <h1>COMMERCE FACULTY (English Medium)</h1>
             </div>
             <div class="courses-timeline--container">
-
+                <ul class="list-ul">
+                    <li><h2>F.Y.B.COM. (7 Papers)</h2>
+                        <ul>
+                            <li><h4>Foundation Course-|</h4></li>
+                            <li><h4>Business Communication</h4></li>
+                            <li><h4>Environmental Studies</h4></li>
+                            <li><h4>Accountancy and Financial Management-|</h4></li>
+                            <li><h4>Mathematical and Statistical Techniques</h4></li>
+                            <li><h4>Business Economics</h4></li>
+                            <li><h4>Commerce-| (Fundamentals of Marketing and Finance)</h4></li>
+                        </ul></li>
+                    <li><h2>S.Y.B.COM. (7 Papers)</h2>
+                        <ul>
+                            <li><h4>Foundational Course-||</h4></li>
+                            <li><h4>Business Economics-||</h4></li>
+                            <li><h4>Accountancy and Financial Management-||</h4></li>
+                            <li><h4>Commerce-|| (Business Environment and Development)</h4></li>
+                            <li><h4>Business Law</h4></li>
+                            <li><h4>Company Secretarial Practice</h4></li>
+                            <li><h4>Computer Programming</h4></li>
+                            <li><h4>Managing Accounting</h4></li>
+                        </ul></li>
+                    <li><h2>T.Y.B.COM. (6 Papers)</h2>
+                        <ul>
+                            <li><h4>Financial Accounting</h4></li>
+                            <li><h4>Costing and Auditing</h4></li>
+                            <li><h4>Commerce-|||(Management & Human Resource Development)</h4></li>
+                            <li><h4>Business Economics-|||</h4></li>
+                            <li><h4>Direct and Indirect Taxation</h4></li>
+                            <li><h4>Computer Sytem and Application</h4></li>
+                            <li><h4>Export Marketing</h4></li>
+                        </ul></li>
+                </ul>
             </div>
         </div>
 
@@ -118,33 +166,36 @@
 <!-- MAIN ENDS -->
 
 <!-- FOOTER START -->
-<footer>
+<footer role="contentinfo" aria-roledescription="contact information">
     <div class="footer--container">
-        <h1 style="text-align: center; line-height: 64px">Contact US</h1>
+        <h1 style="text-align: center; line-height: 64px;">Contact US</h1>
         <div class="footer-one--container">
+            <h3 style="font-weight: lighter;">Address</h3>
             <address>
                 St. John's Convent High School, Near Canara Bank, Mumbra(Thane) - 400 612
             </address>
             <div class="phone">
-                <a href="tel:9082089496"><i class="fas fa-phone fa-ms"></i> 9082089496</a>
+                <a role="button" aria-roledescription="telephone number" href="tel:9082089496"><i role="none" class="fas fa-phone fa-ms"></i> 9082089496</a>
             </div>
             <div class="email">
-                <a href="mailto:mumbranightcollege2001@gmail.com"><i class="fas fa-envelope fa-ms"></i> mumbranightcollege2001@gmail.com</a>
+                <a role="button" aria-roledescription="e-mail address" href="mailto:mumbranightcollege2001@gmail.com"><i role="none" class="fas fa-envelope fa-ms"></i> mumbranightcollege2001@gmail.com</a>
             </div>
-            <div class="footer--social"><a href=""><i class="fab fa-facebook-square fa-2x"></i></a><a href=""><i class="fab fa-instagram fa-2x"></i></a><a href=""><i class="fab fa-twitter fa-2x"></i></a>
+            <div class="footer--social"><a href="https://www.facebook.com" role="button" aria-roledescription="facebook"><i class="fab fa-facebook-square fa-2x"></i></a><a href="https://www.instagram.com" role="button" aria-roledescription="facebook"><i class="fab fa-instagram fa-2x"></i></a><a href="https://www.twitter.com" role="button" aria-roledescription="facebook"><i class="fab fa-twitter fa-2x"></i></a>
             </div>
         </div>
         <div class="footer-two--container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3768.1382584405383!2d73.02090236538517!3d19.189162703391165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3be7bf1e081e3a27%3A0xdd58a45c771a28b!2smumbra%20railway%20station!3m2!1d19.190078!2d73.022813!4m5!1s0x3be7bf1dd9bd2591%3A0x9dbd27f9af087834!2sSt.%20John&#39;s%20Convent%20High%20School%20Mumbra%2C%20Bombay%20Colony%2C%20Mumbra%2C%20Thane%2C%20Maharashtra%20400612!3m2!1d19.1882682!2d73.0235297!5e0!3m2!1sen!2sin!4v1569849956182!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0; border-radius: 10px" allowfullscreen="true"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3768.1382584405383!2d73.02090236538517!3d19.189162703391165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3be7bf1e081e3a27%3A0xdd58a45c771a28b!2smumbra%20railway%20station!3m2!1d19.190078!2d73.022813!4m5!1s0x3be7bf1dd9bd2591%3A0x9dbd27f9af087834!2sSt.%20John&#39;s%20Convent%20High%20School%20Mumbra%2C%20Bombay%20Colony%2C%20Mumbra%2C%20Thane%2C%20Maharashtra%20400612!3m2!1d19.1882682!2d73.0235297!5e0!3m2!1sen!2sin!4v1569849956182!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0; border-radius: 10px" allowfullscreen="allowfullscreen"></iframe>
         </div>
     </div>
     <div class="footer-credits--container">
         <p>Copyright &copy; 2019, All rights reserved</p>
         <p>Website Created by:-</p>
-        <a href="https://ankushitguy.com" target="_blank">ankushitguy</a>
+        <a role="button" aria-roledescription="website developer homepage link" href="https://ankushitguy.com" target="_blank">ankushitguy</a>
     </div>
 </footer>
 <!-- FOOTER ENDS -->
+
+
 
 <script src="js/main.js"></script>
 <!-- Font Awesome Link Used -->

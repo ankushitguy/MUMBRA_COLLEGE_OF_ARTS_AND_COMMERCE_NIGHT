@@ -16,8 +16,9 @@
     <link href="./index.html" rel="canonical">
     <!-- Place favicon.ico in the root directory -->
     <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="icon.png">
-
+    <link rel="apple-touch-icon" href="./icons-192.png">
+    <script src="js/main.js" defer></script>
+    <link rel="manifest" href="manifest.webmanifest">
 
     <!-- Place stylesheet here -->
     <link rel="stylesheet" href="css/style.css">
@@ -47,12 +48,23 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
+
+<div class="install-homescreen--container">
+    <div class="install-homescreen">
+
+        <button class="add-button">Add to home screen <i class="fas fa-download"></i></button>
+    </div>
+</div>
+
+
 <!-- HEADER START -->
-<header>
+
+<header role="banner" aria-roledescription="website heading and information">
+
     <div class="instant-contact">
         <div class="instant-contact--container">
             <div class="instant-social">
-                <a href=""><i class="fab fa-facebook-square fa-lg"></i></a><a href=""><i class="fab fa-instagram fa-lg"></i></a><a href=""><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.facebook.com" role="button" aria-roledescription="facebook"><i class="fab fa-facebook-square fa-lg"></i></a><a href="https://www.instagram.com" role="button" aria-roledescription="instagram"><i class="fab fa-instagram fa-lg"></i></a><a href="https://www.twitter.com" role="button" aria-roledescription="facebook"><i class="fab fa-twitter fa-lg"></i></a>
             </div>
             <div class="instant-email-phone">
                 <a href="tel:9082089496"><i class="fas fa-phone fa-ms"></i> 9082089496</a><a href="mailto:mumbranightcollege2001@gmail.com"><i class="fas fa-envelope fa-ms"></i> mumbranightcollege2001@gmail.com</a>
@@ -85,30 +97,34 @@
 <!-- HEADER ENDS -->
 <!---->
 <!-- NAV START -->
-<nav id="navbar">
+<nav id="navbar" role="navigation" aria-roledescription="navigation of site">
     <div class="nav--container">
         <div class="logo--container"><a href="./index.html"><img src="./icon-white.png" alt="logo"></a></div>
-        <label for="navtoggle" id="navtoggle_text">|||</label>
+
+        <label tabindex="-1" for="navtoggle" id="navtoggle_text">|||</label>
         <input type="checkbox" name="navtoggle" id="navtoggle">
-        <ul>
-            <li><a href="./index.html"> <i class="fas fa-home fa-lg" style="color: #fff"></i> HOME</a></li><!--
-            --><li><a href="./notification.html"> <i class="fas fa-bell fa-lg" style="color: #fff"></i> NOTIFICATION</a></li><!--
-            --><li><a href="./courses.html"> <i class="fas fa-book fa-lg" style="color: #fff"></i> COURSES</a></li><!--
-            --><li><a href="./contact-us.html"> <i class="fas fa-envelope fa-lg" style="color: #fff"></i> CONTACT US</a></li>
+
+        <ul role="menubar" aria-label="navigation menu">
+            <li role="none"><a href="#" role="menuitem" tabindex="0"> <i class="fas fa-home fa-lg" style="color: #fff"></i> HOME</a></li><!--
+            --><li role="none"><a href="./notification.html" role="menuitem" tabindex="0"> <i class="fas fa-bell fa-lg" style="color: #fff"></i> NOTIFICATION</a></li><!--
+            --><li role="none"><a href="./courses.html" role="menuitem" tabindex="0"> <i class="fas fa-book fa-lg" style="color: #fff"></i> COURSES</a></li><!--
+            --><li role="none"><a href="./contact-us.html" role="menuitem" tabindex="0"> <i class="fas fa-envelope fa-lg" style="color: #fff"></i> CONTACT US</a></li>
         </ul>
+
     </div>
 </nav>
 <!--  NAV ENDS-->
 
 <!-- MAIN START -->
-<main>
+<main role="main" aria-roledescription="main content">
     <div class="main--container">
+
         <div class="instant--notification">
             <div class="instant--notification-icon">
                 <i class="fas fa-bell fa-2x" style="color: #339266"></i>
 
             </div>
-            <div class="instant--notification-marquee">
+            <div class="instant--notification-marquee" role="marquee">
                 <marquee behavior="scroll"  direction="left" onmouseover="this.stop();"  onmouseout="this.start();" scrollmount="20" >
                     <a href="" style="line-height: 74px;padding: 0 36px;"><i class="fas fa-file-pdf fa-lg"></i> B.COM Time Table 2019-2020.pdf</a>
                     <a href="" style="line-height: 74px;padding: 0 36px;"><i class="fas fa-file-pdf fa-lg"></i> B.COM Time Table 2019-2020.pdf</a>
@@ -125,12 +141,12 @@
         </div>
 
         <div class="intro--container">
-            <h2><i class="fas fa-user-graduate" style="color: #339266"></i> Introduction <i class="fas fa-chevron-right" style="color: #339266"></i></h2>
-            <h3>The <u>Mumbra College of Arts & Commerce</u> was founded in <u>2001</u> by visionaries and founder of <u>F.M.S. Educational Trust, Mumbra.</u> It is renowed for its academic excellence, exemplary discipline and professional orientation. this college is an institution where knowledge to cope with the tasks that are in store for them but also develop other aspects and personality to sustain themselves in their life. The admission is given as per standard and transparent norms. </h3>
+            <h2 role="heading"><i role="none" class="fas fa-user-graduate" style="color: #339266"></i> Introduction <i class="fas fa-chevron-right" style="color: #339266"></i></h2>
+            <h3 aria-label="Mumbra college introduction">The <u>Mumbra College of Arts & Commerce</u> was founded in <u>2001</u> by visionaries and founder of <u>F.M.S. Educational Trust, Mumbra.</u> It is renowed for its academic excellence, exemplary discipline and professional orientation. this college is an institution where knowledge to cope with the tasks that are in store for them but also develop other aspects and personality to sustain themselves in their life. The admission is given as per standard and transparent norms. </h3>
         </div>
         <div class="goals--container">
-            <h2><i class="fas fa-bullseye" style="color: #339266"></i> Goals <i class="fas fa-chevron-right" style="color: #339266"></i></h2>
-            <h3>The aim of this college is to encourage and promote the education to socially, economically backward and weaker section of the society. The college also aims to assist students in advancement of their education by given books for studies and awarding prizes </h3>
+            <h2 role="heading"><i role="none" class="fas fa-bullseye" style="color: #339266"></i> Goals <i class="fas fa-chevron-right" style="color: #339266"></i></h2>
+            <h3 aria-label="Mumbra college Goals" role="heading">The aim of this college is to encourage and promote the education to socially, economically backward and weaker section of the society. The college also aims to assist students in advancement of their education by given books for studies and awarding prizes </h3>
         </div>
 
         <div class="box--container">
@@ -170,7 +186,7 @@
         </div>
 
         <div class="profile-quotes--container">
-            <div class="profile-quotes" onmouseover="opacityOne(0)" onmouseleave="opacityDotFour(0)">
+            <div class="profile-quotes">
                 <div class="profile-quotes-quotes-image--container">
                     <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="person1">
                 </div>
@@ -184,7 +200,7 @@
                     </div>
                 </div>
             </div>
-            <div class="profile-quotes" onmouseover="opacityOne(1)" onmouseleave="opacityDotFour(1)">
+            <div class="profile-quotes">
                 <div class="profile-quotes-quotes-image--container">
                     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="person2">
                 </div>
@@ -198,7 +214,7 @@
                     </div>
                 </div>
             </div>
-            <div class="profile-quotes" onmouseover="opacityOne(2)" onmouseleave="opacityDotFour(2)">
+            <div class="profile-quotes">
                 <div class="profile-quotes-quotes-image--container">
                     <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="person3">
                 </div>
@@ -212,7 +228,7 @@
                     </div>
                 </div>
             </div>
-            <div class="profile-quotes" onmouseover="opacityOne(3)" onmouseleave="opacityDotFour(3)">
+            <div class="profile-quotes">
                 <div class="profile-quotes-quotes-image--container">
                     <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="person4">
                 </div>
@@ -226,7 +242,7 @@
                     </div>
                 </div>
             </div>
-            <div class="profile-quotes" onmouseover="opacityOne(4)" onmouseleave="opacityDotFour(4)">
+            <div class="profile-quotes">
                 <div class="profile-quotes-quotes-image--container">
                     <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="person5">
                 </div>
@@ -248,35 +264,80 @@
 <!-- MAIN ENDS -->
 
 <!-- FOOTER START -->
-<footer>
+<footer role="contentinfo" aria-roledescription="contact information">
     <div class="footer--container">
-        <h1 style="text-align: center; line-height: 64px">Contact US</h1>
+        <h1 style="text-align: center; line-height: 64px;">Contact US</h1>
         <div class="footer-one--container">
+            <h3 style="font-weight: lighter;">Address</h3>
             <address>
                     St. John's Convent High School, Near Canara Bank, Mumbra(Thane) - 400 612
             </address>
             <div class="phone">
-                <a href="tel:9082089496"><i class="fas fa-phone fa-ms"></i> 9082089496</a>
+                <a role="button" aria-roledescription="telephone number" href="tel:9082089496"><i role="none" class="fas fa-phone fa-ms"></i> 9082089496</a>
             </div>
             <div class="email">
-                <a href="mailto:mumbranightcollege2001@gmail.com"><i class="fas fa-envelope fa-ms"></i> mumbranightcollege2001@gmail.com</a>
+                <a role="button" aria-roledescription="e-mail address" href="mailto:mumbranightcollege2001@gmail.com"><i role="none" class="fas fa-envelope fa-ms"></i> mumbranightcollege2001@gmail.com</a>
             </div>
-            <div class="footer--social"><a href=""><i class="fab fa-facebook-square fa-2x"></i></a><a href=""><i class="fab fa-instagram fa-2x"></i></a><a href=""><i class="fab fa-twitter fa-2x"></i></a>
+            <div class="footer--social"><a href="https://www.facebook.com" role="button" aria-roledescription="facebook"><i class="fab fa-facebook-square fa-2x"></i></a><a href="https://www.instagram.com" role="button" aria-roledescription="facebook"><i class="fab fa-instagram fa-2x"></i></a><a href="https://www.twitter.com" role="button" aria-roledescription="facebook"><i class="fab fa-twitter fa-2x"></i></a>
             </div>
         </div>
         <div class="footer-two--container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3768.1382584405383!2d73.02090236538517!3d19.189162703391165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3be7bf1e081e3a27%3A0xdd58a45c771a28b!2smumbra%20railway%20station!3m2!1d19.190078!2d73.022813!4m5!1s0x3be7bf1dd9bd2591%3A0x9dbd27f9af087834!2sSt.%20John&#39;s%20Convent%20High%20School%20Mumbra%2C%20Bombay%20Colony%2C%20Mumbra%2C%20Thane%2C%20Maharashtra%20400612!3m2!1d19.1882682!2d73.0235297!5e0!3m2!1sen!2sin!4v1569849956182!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0; border-radius: 10px" allowfullscreen="true"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3768.1382584405383!2d73.02090236538517!3d19.189162703391165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3be7bf1e081e3a27%3A0xdd58a45c771a28b!2smumbra%20railway%20station!3m2!1d19.190078!2d73.022813!4m5!1s0x3be7bf1dd9bd2591%3A0x9dbd27f9af087834!2sSt.%20John&#39;s%20Convent%20High%20School%20Mumbra%2C%20Bombay%20Colony%2C%20Mumbra%2C%20Thane%2C%20Maharashtra%20400612!3m2!1d19.1882682!2d73.0235297!5e0!3m2!1sen!2sin!4v1569849956182!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0; border-radius: 10px" allowfullscreen="allowfullscreen"></iframe>
         </div>
     </div>
     <div class="footer-credits--container">
         <p>Copyright &copy; 2019, All rights reserved</p>
         <p>Website Created by:-</p>
-        <a href="https://ankushitguy.com" target="_blank">ankushitguy</a>
+        <a role="button" aria-roledescription="website developer homepage link" href="https://ankushitguy.com" target="_blank">ankushitguy</a>
     </div>
 </footer>
 <!-- FOOTER ENDS -->
 
-<script src="js/main.js"></script>
+
+
+<script>
+    /*
+* Gallery
+*/
+
+    const images = document.getElementsByClassName('image--container');
+    const image_left = document.getElementsByClassName('image-left');
+    const image_right = document.getElementsByClassName('image-right');
+
+    let count = 0;
+    const length = images.length-1;
+
+    image_left[0].addEventListener('click', ()=>{
+        count--;
+        images[count+1].classList.add('gallery-invisible');
+        images[count+1].classList.remove('gallery-visible');
+        if (count === 0) {
+            image_left[0].classList.add('invisible');
+            image_left[0].classList.remove('visible');
+        } else {
+            image_right[0].classList.add('visible');
+            image_right[0].classList.remove('invisible');
+        }
+        console.log(count);
+    });
+    image_right[0].addEventListener('click',()=>{
+        count++;
+        images[count].classList.add('gallery-visible');
+        images[count].classList.remove('gallery-invisible');
+        if (count === length) {
+            image_right[0].classList.add('invisible');
+            image_right[0].classList.remove('visible');
+            images[count].classList.add('gallery-visible');
+            images[count].classList.remove('gallery-invisible');
+        } else {
+            image_left[0].classList.add('visible');
+            image_left[0].classList.remove('invisible');
+        }
+        console.log(count);
+    });
+
+
+</script>
 <!-- Font Awesome Link Used -->
 <script src="https://kit.fontawesome.com/ab4ae87cf5.js" crossorigin="anonymous"></script>
 
