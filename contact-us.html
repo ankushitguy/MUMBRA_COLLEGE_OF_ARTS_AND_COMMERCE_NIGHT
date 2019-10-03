@@ -43,13 +43,17 @@
 </head>
 
 <body data-instant-intensity="mousedown">
+<div id="preload--container">
+    <div class="preload-spinner">
+    </div>
+</div>
 <!--[if IE]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
 
-<div class="install-homescreen--container">
+<div class="install-homescreen--container"  style="display: none">
     <div class="install-homescreen">
 
         <button class="add-button">Add to home screen <i class="fas fa-download"></i></button>
@@ -119,25 +123,25 @@
 <main role="main" aria-roledescription="main content">
     <div class="main--container">
         <div class="form--container">
-            <form action="sendmail/send_contact_mail.php" method="post">
+            <form id="form" method="post">
                 <div class="name--container">
                     <label for="name"><i class="fas fa-user"></i></label>
-                    <input id="name" type="text" placeholder="Name" aria-placeholder="your name" tabindex="1">
+                    <input id="name" name="name" type="text" placeholder="Name" aria-placeholder="your name" tabindex="1">
                 </div>
                 <div class="email--container">
                     <label for="email"><i class="fas fa-envelope"></i></label>
-                    <input id="email" type="text" placeholder="Email" aria-placeholder="your e-mail address" tabindex="2">
+                    <input id="email" name="email" type="text" placeholder="Email" aria-placeholder="your e-mail address" tabindex="1">
                 </div>
                 <div class="subject--container">
                     <label for="subject"><i class="fas fa-comment"></i></label>
-                    <input id="subject" type="text" placeholder="Subject" aria-placeholder="your e-mail subject" tabindex="3">
+                    <input id="subject" name="subject" type="text" placeholder="Subject" aria-placeholder="your e-mail subject" tabindex="1">
                 </div>
                 <div class="message--container">
                     <label for="message"><i class="fas fa-comment-dots"></i></label>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" aria-placeholder="your e-mail message" tabindex="4"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" aria-placeholder="your e-mail message" tabindex="1"></textarea>
                 </div>
 
-                <input type="submit" value="submit" id="submit" aria-label="send e-mail button" tabindex="5">
+                <button id="submit" aria-label="send e-mail button" tabindex="1" disabled="disabled">submit</button>
             </form>
         </div>
     </div>
@@ -170,14 +174,75 @@
     <div class="footer-credits--container">
         <p>Copyright &copy; 2019, All rights reserved</p>
         <p>Website Created by:-</p>
-        <a role="button" aria-roledescription="website developer homepage link" href="https://ankushitguy.com" target="_blank">ankushitguy</a>
+        <a role="button" aria-roledescription="website developer homepage link" href="https://github.com/ankushitguy" target="_blank"><i class="fab fa-github"></i>ankushitguy</a>
     </div>
 </footer>
 <!-- FOOTER ENDS -->
 
+<script>
+    /*
+* Pre Loader
+* */
+    let loader = document.getElementById("preload--container");
+    console.log(loader);
+    document.onreadystatechange = function () {
+        var state = document.readyState;
+        if (state === 'interactive') {
+            loader.style.display = "none";
+        }
+    };
+
+</script>
 
 
 <script src="js/main.js"></script>
+<script>
+    let nameTxt = document.getElementById("name");
+    let emailTxt = document.getElementById("email");
+    let subjectTxt = document.getElementById("subject");
+    let messageTxt = document.getElementById("message");
+    let submitBtn = document.getElementById("submit");
+    let form = document.getElementById("form");
+    let formSubmit = document.getElementById("formSubmit");
+    /*form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+    });*/
+    /*submitBtn.addEventListener('submit',e=>{
+        e.preventDefault();
+    });*/
+    let input = [nameTxt, emailTxt, subjectTxt, messageTxt];
+
+    for (let i = 0; i <input.length; i++) {
+        input[i].addEventListener('input',()=>{
+            if ((nameTxt.value.length && emailTxt.value.length && subjectTxt.value.length && messageTxt.value.length !==0) &&(emailTxt.value.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/g))) {
+                submitBtn.removeAttribute("disabled");
+            } else{
+                submitBtn.setAttribute("disabled",true)
+            }
+        });
+    }
+
+
+
+    submitBtn.addEventListener('click',()=>{
+        sendData();
+    });
+
+    function sendData() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "sendmail/send_contact_mail.php", true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        console.log('send');
+        xhr.send("name="+nameTxt.value+"&email="+emailTxt.value+"&subject="+subjectTxt.value+"&message="+submitBtn.value);
+        setTimeout(()=>{
+            submitBtn.innerHTML = "email send";
+        },1000);
+
+        setTimeout(()=>{
+            submitBtn.innerHTML = "submit";
+        },3000);
+    }
+</script>
 <!-- Font Awesome Link Used -->
 <script src="https://kit.fontawesome.com/ab4ae87cf5.js" crossorigin="anonymous"></script>
 

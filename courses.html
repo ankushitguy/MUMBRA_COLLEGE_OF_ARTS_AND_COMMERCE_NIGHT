@@ -43,13 +43,17 @@
 </head>
 
 <body data-instant-intensity="mousedown">
+<div id="preload--container">
+    <div class="preload-spinner">
+    </div>
+</div>
 <!--[if IE]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
 
-<div class="install-homescreen--container">
+<div class="install-homescreen--container" style="display: none">
     <div class="install-homescreen">
 
         <button class="add-button">Add to home screen <i class="fas fa-download"></i></button>
@@ -190,11 +194,25 @@
     <div class="footer-credits--container">
         <p>Copyright &copy; 2019, All rights reserved</p>
         <p>Website Created by:-</p>
-        <a role="button" aria-roledescription="website developer homepage link" href="https://ankushitguy.com" target="_blank">ankushitguy</a>
+        <a role="button" aria-roledescription="website developer homepage link" href="https://github.com/ankushitguy" target="_blank"><i class="fab fa-github"></i>ankushitguy</a>
     </div>
 </footer>
 <!-- FOOTER ENDS -->
 
+<script>
+    /*
+* Pre Loader
+* */
+    let loader = document.getElementById("preload--container");
+    console.log(loader);
+    document.onreadystatechange = function () {
+        var state = document.readyState;
+        if (state === 'interactive') {
+            loader.style.display = "none";
+        }
+    };
+
+</script>
 
 
 <script src="js/main.js"></script>

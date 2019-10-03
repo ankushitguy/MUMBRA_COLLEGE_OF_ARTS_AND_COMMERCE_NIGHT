@@ -1,48 +1,42 @@
 <?php
 
 
-require 'PHPMailerAutoload.php';
+if (isset($_POST["name"]) && isset($_POST["email"])&& isset($_POST["submit"])&& isset($_POST["message"])) {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    require'PHPMailerAutoload.php';
 //Create a new PHPMailer instance
-$mail = new PHPMailer;
-
+    $mail = new PHPMailer;
 //Set an alternative reply-to address
-$mail->addReplyTo('ronrease@protonmail.com', 'Ron Rease');
+    $mail->addReplyTo($email, $name);
 //Set who the message is to be sent to
-$mail->addAddress('ankushitguy@gmail.com');
+    $mail->addAddress('ankushitguy@gmail.com');
 //Set the subject line
-$mail->isHTML(true);
+    $mail->isHTML(true);
 
-$mail->Subject = 'Test2';
-
-$mail->Body = '<h1>This is a plain-text message body</h1>';
-$mail->AltBody = 'This is a plain-text message body';
+    $mail->Subject = $subject;
+    $mail->Body = '<pre style="font-size: 24px;background-color:#339266;color: #fff;padding: 16px">'.$message.'</pre>';
+    $mail->AltBody = 'This is a plain-text message body';
 
 
 //send the message, check for errors
-if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo "Message sent!";
+    try {
+        if (!$mail->send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            echo "Message sent!";
+            echo "name: ".$name." email: ".$email." subject: ".$subject."message: \n".$message;
+        }
+    } catch (phpmailerException $e) {
+        echo $e;
+    }
+}else{
+    echo 'none';
 }
 ?>
-
-
-<?php
-//// the message
-//$msg = "First line of text\nSecond line of text";
-//
-//// use wordwrap() if lines are longer than 70 characters
-//$msg = wordwrap($msg,70);
-//// send email
-//if (mail("ronrease@protonmail.com", "My subject", $msg)) {
-//    echo "Success";
-//}else{
-//    echo "Fail";
-//}
-//?>
-<!---->
-<!---->
-<!---->
 
 
 

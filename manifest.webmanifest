@@ -1,0 +1,19 @@
+{
+  "name": "MumbraNightCollege",
+  "short_name": "MumbraNC",
+  "description":"MUMBRA COLLEGE OF ARTS & COMMERCE (NIGHT)",
+  "icons": [{
+      "src": "/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }],
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "background_color": "#339266",
+  "theme_color": "#339266"
+}
