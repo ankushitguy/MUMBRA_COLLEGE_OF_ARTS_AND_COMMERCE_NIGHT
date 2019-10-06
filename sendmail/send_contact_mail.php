@@ -1,13 +1,10 @@
 <?php
-
-
-if (isset($_POST["name"]) && isset($_POST["email"])&& isset($_POST["submit"])&& isset($_POST["message"])) {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $subject = $_POST["subject"];
     $message = $_POST["message"];
 
-    require'PHPMailerAutoload.php';
+require'PHPMailerAutoload.php';
 //Create a new PHPMailer instance
     $mail = new PHPMailer;
 //Set an alternative reply-to address
@@ -20,23 +17,8 @@ if (isset($_POST["name"]) && isset($_POST["email"])&& isset($_POST["submit"])&& 
     $mail->Subject = $subject;
     $mail->Body = '<pre style="font-size: 24px;background-color:#339266;color: #fff;padding: 16px">'.$message.'</pre>';
     $mail->AltBody = 'This is a plain-text message body';
+    $mail->send();
 
-
-//send the message, check for errors
-    try {
-        if (!$mail->send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
-        } else {
-            echo "Message sent!";
-            echo "name: ".$name." email: ".$email." subject: ".$subject."message: \n".$message;
-        }
-    } catch (phpmailerException $e) {
-        echo $e;
-    }
-}else{
-    echo 'none';
-}
-?>
 
 
 

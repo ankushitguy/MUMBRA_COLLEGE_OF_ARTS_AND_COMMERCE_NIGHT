@@ -222,25 +222,28 @@
         });
     }
 
-
-
     submitBtn.addEventListener('click',()=>{
         sendData();
+        setTimeout(()=>{
+            submitBtn.innerHTML = "email send";
+        },1000);
+        setTimeout(()=>{
+            submitBtn.innerHTML = "submit";
+        },3000);
     });
 
     function sendData() {
         let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = ()=>{
+            if (xhr.response === 4 || xhr.status === 200) {
+                console.log('ready');
+            }
+        };
         xhr.open("POST", "sendmail/send_contact_mail.php", true);
         xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        console.log('send');
         xhr.send("name="+nameTxt.value+"&email="+emailTxt.value+"&subject="+subjectTxt.value+"&message="+submitBtn.value);
-        setTimeout(()=>{
-            submitBtn.innerHTML = "email send";
-        },1000);
+        console.log('send');
 
-        setTimeout(()=>{
-            submitBtn.innerHTML = "submit";
-        },3000);
     }
 </script>
 <!-- Font Awesome Link Used -->

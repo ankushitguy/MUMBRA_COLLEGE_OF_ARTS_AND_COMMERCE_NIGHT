@@ -306,7 +306,7 @@
     let loader = document.getElementById("preload--container");
     console.log(loader);
     document.onreadystatechange = function () {
-        var state = document.readyState;
+        let state = document.readyState;
         if (state === 'interactive') {
             loader.style.display = "none";
         }
