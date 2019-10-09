@@ -17,7 +17,10 @@ require'PHPMailerAutoload.php';
     $mail->Subject = $subject;
     $mail->Body = '<pre style="font-size: 24px;background-color:#339266;color: #fff;padding: 16px">'.$message.'</pre>';
     $mail->AltBody = 'This is a plain-text message body';
+try {
     $mail->send();
+} catch (phpmailerException $e) {
+}
 
 
 

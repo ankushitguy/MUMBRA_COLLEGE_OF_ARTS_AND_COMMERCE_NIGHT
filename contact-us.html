@@ -103,13 +103,13 @@
 <!-- NAV START -->
 <nav id="navbar" role="navigation" aria-roledescription="navigation of site">
     <div class="nav--container">
-        <div class="logo--container"><a href="./index.html"><img src="./icon-white.png" alt="logo"></a></div>
+        <div class="logo--container"><a href="./"><img src="./icon-white.png" alt="logo"></a></div>
 
         <label tabindex="-1" for="navtoggle" id="navtoggle_text">|||</label>
         <input type="checkbox" name="navtoggle" id="navtoggle">
 
         <ul role="menubar" aria-label="navigation menu">
-            <li role="none"><a href="./index.html" role="menuitem" tabindex="0"> <i class="fas fa-home fa-lg" style="color: #fff"></i> HOME</a></li><!--
+            <li role="none"><a href="./" role="menuitem" tabindex="0"> <i class="fas fa-home fa-lg" style="color: #fff"></i> HOME</a></li><!--
             --><li role="none"><a href="./notification.html" role="menuitem" tabindex="0"> <i class="fas fa-bell fa-lg" style="color: #fff"></i> NOTIFICATION</a></li><!--
             --><li role="none"><a href="./courses.html" role="menuitem" tabindex="0"> <i class="fas fa-book fa-lg" style="color: #fff"></i> COURSES</a></li><!--
             --><li role="none"><a href="#" role="menuitem" tabindex="0"> <i class="fas fa-envelope fa-lg" style="color: #fff"></i> CONTACT US</a></li>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="message--container">
                     <label for="message"><i class="fas fa-comment-dots"></i></label>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" aria-placeholder="your e-mail message" tabindex="1"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" aria-placeholder="your e-mail message" tabindex="1" onclick="sendData();"></textarea>
                 </div>
 
                 <button id="submit" aria-label="send e-mail button" tabindex="1" disabled="disabled">submit</button>
@@ -221,7 +221,7 @@
             }
         });
     }
-
+/*
     submitBtn.addEventListener('click',()=>{
         sendData();
         setTimeout(()=>{
@@ -230,19 +230,26 @@
         setTimeout(()=>{
             submitBtn.innerHTML = "submit";
         },3000);
-    });
+    });*/
 
     function sendData() {
         let xhr = new XMLHttpRequest();
+
+        xhr.open("POST", "sendmail/send_contact_mail.php", true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xhr.onreadystatechange = ()=>{
             if (xhr.response === 4 || xhr.status === 200) {
                 console.log('ready');
             }
         };
-        xhr.open("POST", "sendmail/send_contact_mail.php", true);
-        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xhr.send("name="+nameTxt.value+"&email="+emailTxt.value+"&subject="+subjectTxt.value+"&message="+submitBtn.value);
         console.log('send');
+        setTimeout(()=>{
+            submitBtn.innerHTML = "email send";
+        },1000);
+        setTimeout(()=>{
+            submitBtn.innerHTML = "submit";
+        },3000);
 
     }
 </script>
