@@ -51,8 +51,10 @@ if ('serviceWorker' in navigator) {
 let deferredPrompt;
 const addBtnBG = document.querySelector('.install-homescreen--container');
 
-addBtnBG.style.display = 'none';
-
+// addBtnBG.style.display = 'none';
+function closeBtn(){
+    addBtnBG.style.display = 'none';
+}
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();

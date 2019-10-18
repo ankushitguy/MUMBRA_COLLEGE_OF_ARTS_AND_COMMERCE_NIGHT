@@ -10,12 +10,12 @@ require'PHPMailerAutoload.php';
 //Set an alternative reply-to address
     $mail->addReplyTo($email, $name);
 //Set who the message is to be sent to
-    $mail->addAddress('ankushitguy@gmail.com');
+    $mail->addAddress('mail@mumbranightcollege.in');
 //Set the subject line
     $mail->isHTML(true);
 
     $mail->Subject = $subject;
-    $mail->Body = '<pre style="font-size: 24px;background-color:#339266;color: #fff;padding: 16px">'.$message.'</pre>';
+    $mail->Body = '<p>'.$message.'</p>';
     $mail->AltBody = 'This is a plain-text message body';
 try {
     $mail->send();
